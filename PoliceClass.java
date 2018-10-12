@@ -1,6 +1,7 @@
 package com.company;
 
 import static com.company.Colors.ANSI_PURPLE;
+import static com.company.Colors.ANSI_WHITE_BACKGROUND;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
@@ -17,10 +18,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 class PoliceClass {
-    static Calendar calendar = null;
-    static Date date = null;
-    static Timestamp timestamp = null;
+    private static Calendar calendar = null;
+    private static Date date = null;
+    private static Timestamp timestamp = null;
     private static void print(String string){ System.out.println(string); }
+    @SuppressWarnings("ThrowablePrintedToSystemOut")
     static void runWatcher() throws InterruptedException {
         try {
             WatchService watcher = FileSystems.getDefault().newWatchService();
@@ -43,7 +45,7 @@ class PoliceClass {
                     date = calendar.getTime();
                     timestamp = new Timestamp(date.getTime());
 //                    (char)27 + "[31m" -- for red color
-                    print(ANSI_PURPLE + kind.name() + ": " + fileName + " \ntimestamp: " + timestamp + "\n");
+                    print(ANSI_WHITE_BACKGROUND + ANSI_PURPLE + kind.name() + ": " + fileName + " \ntimestamp: " + timestamp + "\n");
                     if (kind == ENTRY_MODIFY &&
                             fileName.toString().equalsIgnoreCase("message_guid_callback.txt")) {
 //                        print("My source file has changed!!! :" + fileName + "\n");
