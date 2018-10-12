@@ -1,5 +1,6 @@
 package com.company;
 
+import static com.company.Colors.ANSI_PURPLE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
@@ -42,16 +43,16 @@ class PoliceClass {
                     date = calendar.getTime();
                     timestamp = new Timestamp(date.getTime());
 //                    (char)27 + "[31m" -- for red color
-                    print((char)27 + "[31m"  + kind.name() + ": " + fileName + " \ntimestamp: " + timestamp+ "\n");
+                    print(ANSI_PURPLE + kind.name() + ": " + fileName + " \ntimestamp: " + timestamp + "\n");
                     if (kind == ENTRY_MODIFY &&
                             fileName.toString().equalsIgnoreCase("message_guid_callback.txt")) {
-                        print("My source file has changed!!! :" + fileName + "\n");
+//                        print("My source file has changed!!! :" + fileName + "\n");
                     } else if (kind == ENTRY_MODIFY &&
                             fileName.toString().equalsIgnoreCase("message_guid.txt")) {
-                        print("My source file has changed!!! :" + fileName + "\n");
+//                        print("My source file has changed!!! :" + fileName + "\n");
                     } else if (kind == ENTRY_MODIFY &&
                             fileName.toString().equalsIgnoreCase("cykey_SP.txt")) {
-                        print("My source file has changed!!! :" + fileName + "\n");
+//                        print("My source file has changed!!! :" + fileName + "\n");
                     }
                 }
                 boolean valid = key.reset();if (!valid) { break; } }
