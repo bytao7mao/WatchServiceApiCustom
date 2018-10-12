@@ -16,9 +16,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 class PoliceClass {
-    static Calendar calendar = Calendar.getInstance();
-    static Date date = calendar.getTime();
-    static Timestamp timestamp = new Timestamp(date.getTime());
+    static Calendar calendar = null;
+    static Date date = null;
+    static Timestamp timestamp = null;
     private static void print(String string){ System.out.println(string); }
     static void runWatcher() throws InterruptedException {
         try {
@@ -38,7 +38,10 @@ class PoliceClass {
                     @SuppressWarnings("unchecked")
                     WatchEvent<Path> ev = (WatchEvent<Path>) event;
                     Path fileName = ev.context();
-                    print(kind.name() + ": " + fileName + " \ntimestamp: " + timestamp);
+                    calendar = Calendar.getInstance();
+                    date = calendar.getTime();
+                    timestamp = new Timestamp(date.getTime());
+                    print(kind.name() + ": " + fileName + " \ntimestamp: " + timestamp+ "\n");
                     if (kind == ENTRY_MODIFY &&
                             fileName.toString().equalsIgnoreCase("message_guid_callback.txt")) {
                         print("My source file has changed!!! :" + fileName + "\n");
