@@ -41,7 +41,8 @@ class PoliceClass {
                     calendar = Calendar.getInstance();
                     date = calendar.getTime();
                     timestamp = new Timestamp(date.getTime());
-                    print(kind.name() + ": " + fileName + " \ntimestamp: " + timestamp+ "\n");
+//                    (char)27 + "[31m" -- for red color
+                    print((char)27 + "[31m"  + kind.name() + ": " + fileName + " \ntimestamp: " + timestamp+ "\n");
                     if (kind == ENTRY_MODIFY &&
                             fileName.toString().equalsIgnoreCase("message_guid_callback.txt")) {
                         print("My source file has changed!!! :" + fileName + "\n");
