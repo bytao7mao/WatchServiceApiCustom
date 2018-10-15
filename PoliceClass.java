@@ -1,13 +1,9 @@
 package com.company;
 
-/**
- * Created by taozen on 10/12/2018.
- */
-
 import javafx.concurrent.Task;
 
-import static com.company.ColorsClass.*;
-import static com.company.watcherWithGUI.PoliceClassGUI.pathForClient;
+import static com.company.Colors.ANSI_BLACK_BACKGROUND;
+import static com.company.Colors.ANSI_RED;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
@@ -22,29 +18,29 @@ import java.nio.file.WatchService;
 import java.sql.Timestamp;
 import java.util.*;
 
-public class PoliceClass extends Task implements Runnable {
+class PoliceClass extends Task implements Runnable {
 
-    Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     int pathsNumber=0;
     boolean listening = false;
     long counter = 0;
-    static WatchService watcher;
-    List<Path> listDir = new ArrayList<>();
-//    static Path dir,dir2,dir3;
-    private static Calendar calendar = null;
-    private static Date date = null;
-    private static Timestamp timestamp = null;
+    WatchService watcher;
+    final List<Path> listDir = new ArrayList<>();
+    //    static Path dir,dir2,dir3;
+    Calendar calendar = null;
+    Date date = null;
+    Timestamp timestamp = null;
     String currentPath=null;
-    List<String> pathList = new ArrayList<>();
+    final List<String> pathList = new ArrayList<>();
 
-//    static String directory = "C:\\Users\\taozen\\Desktop";
+    //    static String directory = "C:\\Users\\taozen\\Desktop";
 //    static String directory3 = "C:\\Users\\taozen\\Downloads";
 //    static String directory2 = "C:\\Users\\taozen\\Desktop\\ANDROID\\testingLinuxAndroid\\app\\src\\main\\java\\com\\example\\tao\\myapplication";
     private static void print(String string) {
         System.out.println(string);
     }
     @SuppressWarnings("ThrowablePrintedToSystemOut")
-    public void runWatcher() throws InterruptedException {
+    private void runWatcher() throws InterruptedException {
         print("Welcome to tao\'s listener v.0.1 !" + "\n\n");
         print("How many paths do you want to listen ?");
         pathsNumber=Integer.parseInt(sc.nextLine());
@@ -59,14 +55,14 @@ public class PoliceClass extends Task implements Runnable {
         try {
             watcher = FileSystems.getDefault().newWatchService();
 
-                for (String p : pathList){
-                    listDir.add(Paths.get(p));
-                    print("pathList = " + p);
-                }
-                for (Path pat: listDir){
-                    pat.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
-                    print("Watch Service registered for dir: " + pat.getFileName());
-                }
+            for (String p : pathList){
+                listDir.add(Paths.get(p));
+                print("pathList = " + p);
+            }
+            for (Path pat: listDir){
+                pat.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
+                print("Watch Service registered for dir: " + pat.getFileName());
+            }
 
 //solved
 //            dir = Paths.get(directory);
@@ -120,27 +116,32 @@ public class PoliceClass extends Task implements Runnable {
     }
 
     @Override
-    protected Object call() throws Exception {
+    protected Object call() {
         System.out.println("...processing");
         return null;
     }
 
-//    @Override
-//    public void run() {
-//        listening = true;
-//        while(listening) {
-//            try {
-//                System.out.println("Listening on: " + dir.getFileName());
-//                runWatcher();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        try {
-//            watcher.close();
-//        } catch (IOException e) {
-//
-//        }
-//    }
+    @Override
+    public void run() {
+
+        Thread.State currState = Thread.currentThread().getState();
+        if (currState != Thread.State.NEW && currState != Thread.State.TERMINATED){
+            print("ThreaD PoliceClass: " + currState);
+        }
+        listening = true;
+        while(listening) {
+            try {
+                runWatcher();
+                print(Thread.getAllStackTraces().toString());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            watcher.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
