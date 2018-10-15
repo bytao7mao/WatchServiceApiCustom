@@ -1,6 +1,10 @@
 package com.company;
 
-public class Colors {
+/**
+ * Created by taozen on 10/12/2018.
+ */
+
+public class ColorsClass {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";

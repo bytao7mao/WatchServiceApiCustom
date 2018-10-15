@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WatchServiceApiCustom:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WatchServiceApiCustom_jar</output-path>
+    <root id="archive" name="WatchServiceApiCustom.jar">
+      <element id="module-output" name="WatchServiceApiCustom" />
+    </root>
+  </artifact>
+</component>

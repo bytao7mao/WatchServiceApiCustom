@@ -2,8 +2,8 @@ package com.company;
 
 import javafx.concurrent.Task;
 
-import static com.company.Colors.ANSI_BLACK_BACKGROUND;
-import static com.company.Colors.ANSI_RED;
+import static com.company.ColorsClass.ANSI_BLACK_BACKGROUND;
+import static com.company.ColorsClass.ANSI_RED;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
@@ -19,22 +19,20 @@ import java.sql.Timestamp;
 import java.util.*;
 
 class PoliceClass extends Task implements Runnable {
+
     private final Scanner sc = new Scanner(System.in);
     int pathsNumber=0;
     boolean listening = false;
     long counter = 0;
     WatchService watcher;
     final List<Path> listDir = new ArrayList<>();
-    //    static Path dir,dir2,dir3;
+
     Calendar calendar = null;
     Date date = null;
     Timestamp timestamp = null;
     String currentPath=null;
     final List<String> pathList = new ArrayList<>();
 
-    //    static String directory = "C:\\Users\\taozen\\Desktop";
-//    static String directory3 = "C:\\Users\\taozen\\Downloads";
-//    static String directory2 = "C:\\Users\\taozen\\Desktop\\ANDROID\\testingLinuxAndroid\\app\\src\\main\\java\\com\\example\\tao\\myapplication";
     private static void print(String string) {
         System.out.println(string);
     }
@@ -125,7 +123,7 @@ class PoliceClass extends Task implements Runnable {
 
         Thread.State currState = Thread.currentThread().getState();
         if (currState != Thread.State.NEW && currState != Thread.State.TERMINATED){
-            print("ThreaD PoliceClass: " + currState);
+            print("Thread PoliceClass run(): " + currState);
         }
         listening = true;
         while(listening) {
