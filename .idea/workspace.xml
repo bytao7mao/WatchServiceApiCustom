@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4b211b0-87cc-44c3-ad58-287823bd5c4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Colors.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PoliceClass.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/MyWatcher.java" afterPath="$PROJECT_DIR$/src/com/company/MyWatcher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/company/MyWatcher.java" afterPath="$PROJECT_DIR$/src/com/company/IWatcher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,18 +48,18 @@
       <file leaf-file-name="PoliceClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/PoliceClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="125" column="43" lean-forward="false" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
+            <state relative-caret-position="1792">
+              <caret line="130" column="24" lean-forward="false" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="24" />
               <folding>
                 <element signature="e#1148#1196#1" expanded="true" />
-                <element signature="e#3404#3434#1" expanded="true" />
+                <element signature="e#3402#3432#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyWatcher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/MyWatcher.java">
+      <file leaf-file-name="IWatcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/IWatcher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="64">
               <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
@@ -717,12 +713,12 @@
       <workItem from="1539479457730" duration="1591000" />
       <workItem from="1539530274686" duration="8820000" />
       <workItem from="1539548483772" duration="736000" />
-      <workItem from="1539629549588" duration="644000" />
+      <workItem from="1539629549588" duration="711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24424000" />
+    <option name="totallyTimeSpent" value="24491000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -822,7 +818,7 @@
           <caret line="45" column="52" lean-forward="true" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
           <folding>
             <element signature="e#1148#1196#1" expanded="true" />
-            <element signature="e#3404#3434#1" expanded="true" />
+            <element signature="e#3402#3432#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -864,7 +860,7 @@
           <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
           <folding>
             <element signature="e#1148#1196#1" expanded="true" />
-            <element signature="e#3404#3434#1" expanded="true" />
+            <element signature="e#3402#3432#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -906,7 +902,7 @@
           <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
           <folding>
             <element signature="e#1148#1196#1" expanded="true" />
-            <element signature="e#3404#3434#1" expanded="true" />
+            <element signature="e#3402#3432#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -948,7 +944,7 @@
           <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
           <folding>
             <element signature="e#1148#1196#1" expanded="true" />
-            <element signature="e#3404#3434#1" expanded="true" />
+            <element signature="e#3402#3432#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -980,7 +976,7 @@
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#1148#1196#1" expanded="true" />
-            <element signature="e#3404#3434#1" expanded="true" />
+            <element signature="e#3402#3432#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1021,7 +1017,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/MyWatcher.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/IWatcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
@@ -1042,11 +1038,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/PoliceClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="125" column="43" lean-forward="false" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
+        <state relative-caret-position="1792">
+          <caret line="130" column="24" lean-forward="false" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="24" />
           <folding>
             <element signature="e#1148#1196#1" expanded="true" />
-            <element signature="e#3404#3434#1" expanded="true" />
+            <element signature="e#3402#3432#1" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -37,7 +37,7 @@ class PoliceClass extends Task implements Runnable {
         System.out.println(string);
     }
     @SuppressWarnings("ThrowablePrintedToSystemOut")
-    MyWatcher myWatcher = () -> {
+    IWatcher iWatcher = () -> {
         print("Welcome to tao\'s listener v.0.1 !" + "\n\n");
         print("How many paths do you want to listen ?");
         pathsNumber=Integer.parseInt(sc.nextLine());
@@ -128,7 +128,7 @@ class PoliceClass extends Task implements Runnable {
         listening = true;
         while(listening) {
             try {
-                myWatcher.runWatcher();
+                iWatcher.runWatcher();
                 print(Thread.getAllStackTraces().toString());
             } catch (InterruptedException e) {
                 e.printStackTrace();
